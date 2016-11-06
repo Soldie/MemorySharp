@@ -1,22 +1,15 @@
-﻿/*
- * MemorySharp Library
- * http://www.binarysharp.com/
- *
- * Copyright (C) 2012-2016 Jämes Ménétrey (a.k.a. ZenLulz).
- * This library is released under the MIT License.
- * See the file LICENSE for more information.
-*/
-using System.Reflection;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MemorySharp")]
-[assembly: AssemblyDescription("MemorySharp is a C# based memory editing library targeting Windows applications, offering various functions to extract and inject data and codes into remote processes to allow interoperability.")]
+[assembly: AssemblyTitle("FasmProxy")]
+[assembly: AssemblyDescription("A proxy to communicate with Fasm assembler.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Binarysharp")]
-[assembly: AssemblyProduct("MemorySharp")]
+[assembly: AssemblyProduct("FasmProxy")]
 [assembly: AssemblyCopyright("Copyright © 2012-2016 Jämes Ménétrey (aka ZenLulz)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -27,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1641caf4-3e21-40b4-acb4-1364c4853930")]
+[assembly: Guid("40f21fc0-80e9-4e32-97c6-5d9966d539a5")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -39,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.0")]
-[assembly: AssemblyFileVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
