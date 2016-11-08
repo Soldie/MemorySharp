@@ -6,6 +6,7 @@
  * This library is released under the MIT License.
  * See the file LICENSE for more information.
 */
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -89,6 +90,28 @@ namespace Binarysharp.MemoryManagement
         /// Provide access to the opened process.
         /// </summary>
         public Process Native { get; private set; }
+        #endregion
+        #region ParentProcess
+        /// <summary>
+        /// Gets the parent process.
+        /// </summary>
+        public Process ParentProcess
+        {
+            get
+            {
+                ProcessBasicInformation pbi = MemoryCore.NtQueryInformationProcess(Handle);
+
+                try
+                {
+                    return Process.GetProcessById(pbi.InheritedFromUniqueProcessId);
+                }
+                catch (ArgumentException)
+                {
+                    // The parent process is no longer running
+                    return null;
+                }
+            }
+        }
         #endregion
         #region Peb
         /// <summary>

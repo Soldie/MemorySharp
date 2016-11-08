@@ -2,6 +2,12 @@
 
 The log of changes made to MemorySharp Library.
 
+## V2.0 (TBD)
+
+New API:
+
+- New property called ParentProcess added. It's used to retrieve the parent of the currently opened process.
+
 ## V1.2 (21 September 2016)
 
 Enhancements:
