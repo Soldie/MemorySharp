@@ -2,7 +2,6 @@
 using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using Binarysharp.MemoryManagement.Assembly.Assembler;
 
 namespace Binarysharp.FasmProxy.HostingService
 {
@@ -47,6 +46,7 @@ namespace Binarysharp.FasmProxy.HostingService
         /// <param name="channelName">Name of the channel.</param>
         private void InitializeNamedPipeListener(string channelName)
         {
+            var uri = $"{UriPrefix}/{typeof(THostedService).Name}/{channelName}";
             ServiceHost = new ServiceHost(typeof(THostedService));
             var binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None)
             {
@@ -57,7 +57,7 @@ namespace Binarysharp.FasmProxy.HostingService
 
             ServiceHost.Description.Behaviors.Remove(typeof(ServiceDebugBehavior));
             ServiceHost.Description.Behaviors.Add(new ServiceDebugBehavior { IncludeExceptionDetailInFaults = true });
-            ServiceHost.AddServiceEndpoint(typeof(THostedService).GetInterfaces().First(), binding, UriPrefix + channelName);
+            ServiceHost.AddServiceEndpoint(typeof(THostedService).GetInterfaces().First(), binding, uri);
             ServiceHost.Open();
         }
     }

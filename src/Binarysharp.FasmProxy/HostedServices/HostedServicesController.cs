@@ -10,7 +10,7 @@ namespace Binarysharp.FasmProxy.HostedServices
         /// <summary>
         /// A collection that contains all the services hosted by the proxy.
         /// </summary>
-        private static readonly IHostingService[] HostedServices =
+        private static readonly IHostingService[] HostingServices =
         {
             new NamedPipeService<FasmHostedAssembler>()
         };
@@ -21,9 +21,20 @@ namespace Binarysharp.FasmProxy.HostedServices
         /// <param name="channelName">Name of the channel.</param>
         public static void StartAll(string channelName)
         {
-            foreach (var hostedAssembler in HostedServices)
+            foreach (var hostingService in HostingServices)
             {
-                hostedAssembler.Start(channelName);
+                hostingService.Start(channelName);
+            }
+        }
+
+        /// <summary>
+        /// Stops all the hosted services.
+        /// </summary>
+        public static void StopAll()
+        {
+            foreach (var hostingService in HostingServices)
+            {
+                hostingService.Stop();
             }
         }
     }

@@ -52,7 +52,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FasmProxyController.cs" />
-    <Compile Include="WcfCommunicationTests.cs" />
+    <Compile Include="FasmUsingNamedPipesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

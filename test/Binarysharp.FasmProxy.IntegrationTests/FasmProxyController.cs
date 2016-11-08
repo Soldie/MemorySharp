@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.ServiceModel;
-using Binarysharp.FasmProxy.HostingService;
 using Binarysharp.MemoryManagement.Assembly.Assembler;
 
 namespace Binarysharp.FasmProxy.IntegrationTests
@@ -17,17 +16,17 @@ namespace Binarysharp.FasmProxy.IntegrationTests
         private readonly Process _process;
 
         /// <summary>
-        /// The name of the URI of the named pipes.
+        /// The URI of the WCF endpoint.
         /// </summary>
-        private readonly string _namedPipeUri;
+        private readonly string _uri;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FasmProxyController"/> class and starts a new process of type FasmProxy.
         /// </summary>
-        public FasmProxyController()
+        public FasmProxyController(string uri)
         {
             _process = Process.Start("Binarysharp.FasmProxy.exe");
-            _namedPipeUri = NamedPipeService<object>.UriPrefix;
+            _uri = uri;
         }
 
         /// <summary>
@@ -38,7 +37,7 @@ namespace Binarysharp.FasmProxy.IntegrationTests
             Debugger.Break();
 
             var binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
-            var ep = new EndpointAddress(_namedPipeUri + "dummy");
+            var ep = new EndpointAddress(_uri);
 
             return ChannelFactory<IHostedAssembler>.CreateChannel(binding, ep);
         }

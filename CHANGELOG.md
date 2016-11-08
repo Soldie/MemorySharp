@@ -4,9 +4,19 @@ The log of changes made to MemorySharp Library.
 
 ## V2.0 (TBD)
 
+New Features:
+
+- MemorySharp can now open and interact with 64-bit processes.
+
+New Project:
+
+- A project called FasmProxy has been added and is now part of the library, in order to assemble assembly codes for 32 and 64-bit processes.
+
 New API:
 
 - New property called ParentProcess added. It's used to retrieve the parent of the currently opened process.
+
+
 
 ## V1.2 (21 September 2016)
 
