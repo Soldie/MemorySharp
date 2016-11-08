@@ -19,11 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8CE5378B-EF1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{93385C92-5674-4822-9665-7F2541826856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binarysharp.FasmProxy", "Binarysharp.FasmProxy\Binarysharp.FasmProxy.csproj", "{40F21FC0-80E9-4E32-97C6-5D9966D539A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binarysharp.FasmProxy", "..\..\src\Binarysharp.FasmProxy\Binarysharp.FasmProxy.csproj", "{40F21FC0-80E9-4E32-97C6-5D9966D539A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{BD4965E1-D40A-4512-826A-3E776339E105}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binarysharp.FasmProxy.IntegrationTests", "Binarysharp.FasmProxy.IntegrationTests\Binarysharp.FasmProxy.IntegrationTests.csproj", "{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binarysharp.FasmProxy.IntegrationTests", "..\..\test\Binarysharp.FasmProxy.IntegrationTests\Binarysharp.FasmProxy.IntegrationTests.csproj", "{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
