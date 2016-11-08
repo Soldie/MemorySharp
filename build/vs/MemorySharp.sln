@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{93385C92-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binarysharp.FasmProxy", "Binarysharp.FasmProxy\Binarysharp.FasmProxy.csproj", "{40F21FC0-80E9-4E32-97C6-5D9966D539A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{BD4965E1-D40A-4512-826A-3E776339E105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binarysharp.FasmProxy.IntegrationTests", "Binarysharp.FasmProxy.IntegrationTests\Binarysharp.FasmProxy.IntegrationTests.csproj", "{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,13 +79,31 @@ Global
 		{40F21FC0-80E9-4E32-97C6-5D9966D539A5}.Release|Win32.Build.0 = Release|Any CPU
 		{40F21FC0-80E9-4E32-97C6-5D9966D539A5}.Release|x64.ActiveCfg = Release|Any CPU
 		{40F21FC0-80E9-4E32-97C6-5D9966D539A5}.Release|x64.Build.0 = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|Win32.Build.0 = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Debug|x64.Build.0 = Debug|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|Win32.ActiveCfg = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|Win32.Build.0 = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|x64.ActiveCfg = Release|Any CPU
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{78A6F97D-5CA8-4E92-8E17-2545983C9555} = {8CE5378B-EF17-465D-AB2E-1394ECA7BB7E}
-		{E3EFE942-113F-46AA-9CF4-A51473D9E8B8} = {93385C92-5674-4822-9665-7F2541826856}
+		{E3EFE942-113F-46AA-9CF4-A51473D9E8B8} = {BD4965E1-D40A-4512-826A-3E776339E105}
 		{40F21FC0-80E9-4E32-97C6-5D9966D539A5} = {8CE5378B-EF17-465D-AB2E-1394ECA7BB7E}
+		{BD4965E1-D40A-4512-826A-3E776339E105} = {93385C92-5674-4822-9665-7F2541826856}
+		{32F3DEAF-0CDB-4587-9076-6D1604F1A9C6} = {BD4965E1-D40A-4512-826A-3E776339E105}
 	EndGlobalSection
 EndGlobal

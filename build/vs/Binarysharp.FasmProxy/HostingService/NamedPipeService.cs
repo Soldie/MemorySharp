@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
+using Binarysharp.MemoryManagement.Assembly.Assembler;
 
 namespace Binarysharp.FasmProxy.HostingService
 {
@@ -8,9 +10,9 @@ namespace Binarysharp.FasmProxy.HostingService
     /// Hosts a given service using named pipes.
     /// </summary>
     /// <typeparam name="THostedService">The type of hosted service.</typeparam>
-    public class NamedPipeService<THostedService> : IHostingService<THostedService>
+    public class NamedPipeService<THostedService> : IHostingService
     {
-        protected const string UriPrefix = "net.pipe://localhost/";
+        public const string UriPrefix = "net.pipe://localhost/";
         protected ServiceHost ServiceHost;
         protected bool IsRunning;
 
@@ -55,7 +57,7 @@ namespace Binarysharp.FasmProxy.HostingService
 
             ServiceHost.Description.Behaviors.Remove(typeof(ServiceDebugBehavior));
             ServiceHost.Description.Behaviors.Add(new ServiceDebugBehavior { IncludeExceptionDetailInFaults = true });
-            ServiceHost.AddServiceEndpoint(typeof(THostedService), binding, UriPrefix + channelName);
+            ServiceHost.AddServiceEndpoint(typeof(THostedService).GetInterfaces().First(), binding, UriPrefix + channelName);
             ServiceHost.Open();
         }
     }

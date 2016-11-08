@@ -3,8 +3,7 @@
     /// <summary>
     /// An abstract way to represent a hosting of a given service.
     /// </summary>
-    /// <typeparam name="THostedService">The type of hosted service.</typeparam>
-    public interface IHostingService<THostedService>
+    public interface IHostingService
     {
         /// <summary>
         /// Starts the hosted service with the specified channel name.
