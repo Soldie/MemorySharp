@@ -7,6 +7,7 @@ The log of changes made to MemorySharp Library.
 New Features:
 
 - MemorySharp can now open and interact with 64-bit processes.
+- Ability to create interprocess events with the class InterProcessEventWaitHandle.
 
 New Project:
 
@@ -14,7 +15,7 @@ New Project:
 
 New API:
 
-- New property called ParentProcess added. It's used to retrieve the parent of the currently opened process.
+- New property called ParentProcess added in MemorySharp. It's used to retrieve the parent of the currently opened process.
 
 
 
