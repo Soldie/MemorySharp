@@ -1,21 +1,12 @@
-﻿/*
- * MemorySharp Library
- * http://www.binarysharp.com/
- *
- * Copyright (C) 2012-2016 Jämes Ménétrey (a.k.a. ZenLulz).
- * This library is released under the MIT License.
- * See the file LICENSE for more information.
-*/
-using Binarysharp.Assemblers.Fasm;
-using System;
+﻿using System;
+using Binarysharp.MemoryManagement.Helpers;
 
 namespace Binarysharp.MemoryManagement.Assembly.Assembler
 {
     /// <summary>
-    /// Implement Fasm.NET compiler for 32-bit development.
-    /// More info: https://github.com/ZenLulz/Fasm.NET
+    /// Implementation of an assembler relying on fasm proxy.
     /// </summary>
-    public class Fasm32Assembler : IAssembler
+    public class NamedPipeAssembler : IAssembler
     {
         /// <summary>
         /// Assemble the specified assembly code.
@@ -24,7 +15,6 @@ namespace Binarysharp.MemoryManagement.Assembly.Assembler
         /// <returns>An array of bytes containing the assembly code.</returns>
         public byte[] Assemble(string asm)
         {
-            // Assemble and return the code
             return Assemble(asm, IntPtr.Zero);
         }
 
@@ -37,9 +27,9 @@ namespace Binarysharp.MemoryManagement.Assembly.Assembler
         public byte[] Assemble(string asm, IntPtr baseAddress)
         {
             // Rebase the code
-            asm = String.Format("use32\norg 0x{0:X8}\n", baseAddress.ToInt64()) + asm;
-            // Assemble and return the code
-            return FasmNet.Assemble(asm);
+            asm = $"use32\norg 0x{baseAddress.ToInt64():X8}\n" + asm;
+
+            return Singleton<NamedPipeFasmProxy>.Instance.HostedAssembler.Assemble(asm, baseAddress);
         }
     }
 }

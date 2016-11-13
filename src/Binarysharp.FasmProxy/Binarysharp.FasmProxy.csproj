@@ -69,6 +69,15 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>-- Copy in the folder of MemorySharp
+copy /Y "$(TargetDir)$(ProjectName).*" "$(ProjectDir)..\MemorySharp\$(OutDir)"
+copy /Y "$(TargetDir)Fasm.NET.*" "$(ProjectDir)..\MemorySharp\$(OutDir)"
+
+-- Copy in the folder of the IntegrationTests of MemorySharp
+copy /Y "$(TargetDir)$(ProjectName).*" "$(ProjectDir)..\..\test\IntegrationTests\$(OutDir)"
+copy /Y "$(TargetDir)Fasm.NET.*" "$(ProjectDir)..\..\test\IntegrationTests\$(OutDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

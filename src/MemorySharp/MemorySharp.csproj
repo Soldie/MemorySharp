@@ -51,10 +51,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fasm.NET">
-      <HintPath>..\..\packages\Fasm.NET.1.70.03.2\lib\Fasm.NET.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,9 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assembly\Assembler\Fasm32Assembler.cs" />
+    <Compile Include="Assembly\Assembler\NamedPipeFasmProxy.cs" />
     <Compile Include="Assembly\Assembler\IAssembler.cs" />
     <Compile Include="Assembly\Assembler\IHostedAssembler.cs" />
+    <Compile Include="Assembly\Assembler\NamedPipeAssembler.cs" />
     <Compile Include="Assembly\AssemblyFactory.cs" />
     <Compile Include="Assembly\AssemblyTransaction.cs" />
     <Compile Include="Assembly\CallingConvention\CallingConventionSelector.cs" />
@@ -123,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MemorySharp.licenseheader" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

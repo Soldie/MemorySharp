@@ -48,7 +48,7 @@ namespace Binarysharp.MemoryManagement.Assembly
             // Save the parameter
             MemorySharp = memorySharp;
             // Create the tool
-            Assembler = new Fasm32Assembler();
+            Assembler = new NamedPipeAssembler();
         }
         #endregion
 

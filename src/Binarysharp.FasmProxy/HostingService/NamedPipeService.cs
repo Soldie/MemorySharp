@@ -46,7 +46,7 @@ namespace Binarysharp.FasmProxy.HostingService
         /// <param name="channelName">Name of the channel.</param>
         private void InitializeNamedPipeListener(string channelName)
         {
-            var uri = $"{UriPrefix}/{typeof(THostedService).Name}/{channelName}";
+            var uri = $"{UriPrefix}{typeof(THostedService).Name}/{channelName}";
             ServiceHost = new ServiceHost(typeof(THostedService));
             var binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None)
             {
